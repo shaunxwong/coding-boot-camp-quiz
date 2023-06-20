@@ -1,0 +1,229 @@
+:root {
+    --white: #F7F6F1;
+    --black: #161616;
+    --grey: rgba(0, 0, 0, .3);
+    --grey2: #909090;
+  }
+  
+  * {
+    margin: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+  }
+  
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  
+  #quiz-container {
+    width: 100%;
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #start-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  #question-container {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #initials {
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  #options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 60px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #7a9cf5;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .option:hover {
+    background-color: #5c80f2;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  #start-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #7a9cf5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #restart-button {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #7a9cf5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #restart-button:hover {
+    background-color: #5c80f2;
+  }
+  
+  #loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+
+  #timer-container {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  #score-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  #high-score-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .high-score {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  #high-score-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .hero-wrapper-text {
+    flex: 1;
+  }
+  
+  .hero-wrapper-img {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .star {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-wrapper-text,
+    .hero-wrapper-img {
+      margin-bottom: 40px;
+    }
+  }
+  

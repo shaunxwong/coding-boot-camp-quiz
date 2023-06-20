@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Snowboarding Quiz Game</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="hero container">
+      <div class="hero-wrapper-text">
+         <div id="quiz-container">
+          <div class="hero-wrapper-img">
+            <img src="images/header-img.png" alt="" />
+          </div>
+          <div id="start-container">
+            <input type="text" id="initials" placeholder="Enter your initials">
+            <button id="start-button" class="btn">Start Quiz</button>
+          </div>
+          <div id="question-container"></div>
+          <div id="options-container"></div>
+          <div id="result-container"></div>
+          <button id="restart-button" class="btn">Restart</button>
+          <div id="loader-container" style="display: none;">
+            <div class="loader"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wrapper-img">
+        <div class="container">        
+          <div id="timer-container">
+          <span id="timer">20</span>
+        </div>
+      </div>
+        <div class="card">
+          <div id="score-container">
+            <h2>High Score</h2>
+            <ul id="high-score-list"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="js/script.js"></script> 
+</body>
+</html>
