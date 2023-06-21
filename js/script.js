@@ -1,29 +1,29 @@
 // Define the quiz questions and answers
 const quizQuestions = [
   {
-    question: "Which country hosted the first-ever Winter Olympics snowboarding events?",
-    options: ["A) United States", "B) Switzerland", "C) Japan", "D) Canada"],
-    answer: "A) United States"
+    question: "Which of the following programming languages is primarily used for web development?  ",
+    options: ["A) Python", "B) Java", "C) HTML", "D) C++"],
+    answer: "C) HTML"
   },
   {
-    question: "Which snowboarding trick involves rotating the body horizontally along the length of the board?",
-    options: ["A) 180", "B) Backflip", "C) Ollie", "D) Railslide"],
-    answer: "A) 180"
+    question: "What is the correct syntax for declaring a variable in JavaScript?",
+    options: ["A) var myVariable = 5", "B) variable myVariable = 5;", "C) let myVariable = 5;", "D) const myVariable = 5;"],
+    answer: "C) let myVariable = 5;"
   },
   {
-    question: "What is the name for the snowboarding competition that combines elements of halfpipe, slopestyle, and big air?",
-    options: ["A) Big Air", "B) Freeride", "C) Superpipe", "D) Slopestyle"],
-    answer: "D) Slopestyle"
+    question: "In object-oriented programming, what is the process of creating an instance of a class called?",
+    options: ["A) Inheritance", "B) Abstraction", "C) Polymorphism", "D) Instantiation"],
+    answer: "D) Instantiation"
   },
   {
-    question: "Which snowboarder won the gold medal in the men's halfpipe event at the 2018 Winter Olympics?",
-    options: ["A) Shaun White", "B) Ayumu Hirano", "C) Scotty James", "D) Iouri Podladtchikov"],
-    answer: "A) Shaun White"
+    question: "Which data structure follows the 'first-in, first-out' (FIFO) principle?",
+    options: ["A) Stack", "B) Queue", "C) Array", "D) Linked list"],
+    answer: "B) Queue"
   },
   {
-    question: "What does the term 'goofy' refer to in snowboarding?",
-    options: ["A) Riding with the left foot forward", "B) Riding with the right foot forward", "C) Performing tricks while riding switch", "D) Riding with both feet unstrapped"],
-    answer: "B) Riding with the right foot forward"
+    question: "Which of the following HTML tags is used to define a hyperlink in web development?",
+    options: ["A) <link>", "B) <span>", "C) <a>", "D) <img>"],
+    answer: "C) <a>"
   },
   // Add more questions here
 ];
@@ -46,10 +46,13 @@ const highScoreList = document.getElementById("high-score-list");
 
 // Function to start the quiz
 function startQuiz() {
+  //Display time duration & Set score
   timeLeft = 20;
   score = 0;
+  //Retrieving the values entered in the "initials" input field and assigns it to the initials variable in JS.
   initials = document.getElementById("initials").value.trim();
 
+  //Require Initials to get started (Reverse the order instead of asking it at the end)
   if (initials === "") {
     alert("Please enter your initials.");
     return;
@@ -153,16 +156,30 @@ function saveHighScore(highScore) {
 // Function to display the high scores
 function displayHighScores() {
   highScoreList.innerHTML = "";
+  const emptyScoreList = document.getElementById("empty-score-list");
+  emptyScoreList.innerHTML = "";
 
   let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-  highScores.forEach((highScore, index) => {
-    if (index < 10) {
-      const listItem = document.createElement("li");
-      listItem.innerHTML = `<span>${index + 1}. ${highScore.initials}</span><span class="score">${highScore.score}</span>`;
-      highScoreList.appendChild(listItem);
+  const maxHighScores = 10;
+  const totalHighScores = Math.min(highScores.length, maxHighScores);
+
+  for (let i = 0; i < totalHighScores; i++) {
+    const highScore = highScores[i];
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<span>${i + 1}. ${highScore.initials}</span><span class="score">${highScore.score}</span>`;
+    highScoreList.appendChild(listItem);
+  }
+
+  if (totalHighScores < maxHighScores) {
+    const emptyScoreCount = maxHighScores - totalHighScores;
+    for (let i = 0; i < emptyScoreCount; i++) {
+      const emptyScoreItem = document.createElement("li");
+      emptyScoreItem.className = "empty-score";
+      emptyScoreItem.textContent = `${totalHighScores + i + 1}. `;
+      emptyScoreList.appendChild(emptyScoreItem);
     }
-  });
+  }
 }
 
 // Function to restart the quiz
