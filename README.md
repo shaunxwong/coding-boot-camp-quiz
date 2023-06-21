@@ -36,3 +36,13 @@ This project is a timed coding quiz with multiple-choice questions. The purpose 
 - `index.html` is the main HTML file where the quiz is displayed.
 - `README.md` contains information about the project and how to use it.
 
+## Review
+
+You are required to submit BOTH of the following for review:
+
+* The URL of the functional, deployed application.
+https://shaunxwong.github.io/coding-boot-camp-quiz/
+
+* The URL of the GitHub repository, with a unique name and a readme describing the project.
+https://github.com/shaunxwong/coding-boot-camp-quiz.git
+---
