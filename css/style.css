@@ -118,13 +118,15 @@
   }
 
   .timerbox {
+    z-index: 999;
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    background-image: url(header-img.png);
-    background-size: cover;
+    background-image: url(../images/clock-img.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
   } 
   
@@ -156,12 +158,14 @@
   
 
   #timer-container {
-    font-size: 64px;
+    
+    padding: 20px;
+    font-size: 56px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
   }
 
   .loader {
